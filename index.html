@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayChile Casino - Centro de Soporte</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .header-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Intro Banner */
+        .intro-banner {
+            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
+            border-left: 4px solid #ffd700;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .intro-text h2 {
+            color: #ffd700;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .intro-text p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .intro-btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .intro-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Layout: FAQs + Chat */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* FAQs Section */
+        .faqs-section h2 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-category {
+            margin-bottom: 10px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000000;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+        }
+
+        .accordion-item.active {
+            border-color: #ffd700;
+            background: #0a0a0a;
+        }
+
+        .accordion-header {
+            background: #1a1a1a;
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-header {
+            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
+        }
+
+        .accordion-header h3 {
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .accordion-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            color: #ffd700;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #0a0a0a;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 300px;
+        }
+
+        .accordion-content p {
+            padding: 14px 16px;
+            font-size: 12px;
+            color: #cccccc;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-section h2 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-container {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .chat-container:hover {
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
+            padding: 15px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header p {
+            font-size: 12px;
+            color: #ffd700;
+            margin: 0;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-launcher-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            gap: 16px;
+        }
+
+        .chat-launcher-icon {
+            font-size: 48px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+
+        .chat-launcher-text {
+            color: #cccccc;
+            font-size: 13px;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .chat-launcher-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000000;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .chat-launcher-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .chat-launcher {
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contact Info Section */
+        .contact-section {
+            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
+            border-left: 4px solid #ffd700;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .contact-section h3 {
+            color: #ffd700;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #333333;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .contact-item p {
+            font-size: 11px;
+            color: #888888;
+            margin-bottom: 8px;
+            margin: 0 0 8px 0;
+        }
+
+        .contact-item a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+
+        .contact-item a:hover {
+            color: #ffed4e;
+            transform: translateX(3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-top: 2px solid #ffd700;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 11px;
+            color: #888888;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ffed4e;
+        }
+
+        .footer-disclaimer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333333;
+            color: #666666;
+            font-size: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .intro-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .chat-launcher-body {
+                padding: 30px 15px;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faq-categories {
+                gap: 15px;
+            }
+
+            .accordion-item {
+                margin-bottom: 8px;
+            }
+
+            .accordion-header {
+                padding: 12px 14px;
+            }
+
+            .accordion-header h3 {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-bottom: 20px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                border-bottom: 2px solid #ffd700;
+            }
+
+            .header h1 {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 15px 12px;
+                max-width: 100%;
+            }
+
+            .intro-banner {
+                padding: 12px;
+                margin-bottom: 20px;
+                flex-direction: column;
+                gap: 12px;
+                border-left: 3px solid #ffd700;
+            }
+
+            .intro-text h2 {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .intro-text p {
+                font-size: 12px;
+            }
+
+            .intro-btn {
+                width: 100%;
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .faqs-section h2, .chat-section h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .faq-categories {
+                gap: 12px;
+            }
+
+            .accordion-item {
+                margin-bottom: 6px;
+            }
+
+            .accordion-header {
+                padding: 10px 12px;
+            }
+
+            .accordion-header h3 {
+                font-size: 11px;
+            }
+
+            .accordion-content p {
+                padding: 10px 12px;
+                font-size: 11px;
+            }
+
+            .category-badge {
+                font-size: 10px;
+                padding: 4px 10px;
+                margin-bottom: 8px;
+            }
+
+            .contact-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .contact-section h3 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .contact-item {
+                padding: 10px;
+            }
+
+            .contact-item p {
+                font-size: 10px;
+            }
+
+            .contact-item a {
+                font-size: 12px;
+            }
+
+            .chat-launcher-body {
+                padding: 25px 12px;
+                gap: 12px;
+            }
+
+            .chat-launcher-icon {
+                font-size: 36px;
+            }
+
+            .chat-launcher {
+                min-height: 220px;
+            }
+
+            .footer {
+                padding: 15px 12px;
+                font-size: 10px;
+            }
+
+            .footer-disclaimer {
+                margin-top: 10px;
+                padding-top: 10px;
+                font-size: 9px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .accordion-item, .contact-item, .chat-container {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="header-logo">
+                <span>🎰</span>
+                <h1>PlayChile Casino</h1>
+            </div>
+            <p>Centro de Soporte - Resolvemos tus dudas en tiempo real</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Intro Banner -->
+        <div class="intro-banner">
+            <div class="intro-text">
+                <h2>¿Necesitas ayuda?</h2>
+                <p>Estamos disponibles 24/7 para resolver todas tus preguntas</p>
+            </div>
+            <button class="intro-btn" onclick="window.open('https://direct.lc.chat/19580488', '_blank');">
+                Ir al Chat →
+            </button>
+        </div>
+
+        <!-- Main Content: FAQs + Chat -->
+        <div class="content-wrapper">
+            <!-- FAQs Section -->
+            <div class="faqs-section">
+                <h2>❓ Preguntas Frecuentes</h2>
+                
+                <div class="faq-categories">                    <div class="faq-category">
+                        <span class="category-badge">💳 DEPÓSITOS & RETIROS</span>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cuáles son los métodos de depósito?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Aceptamos transferencia bancaria, tarjetas de crédito/débito, billeteras digitales y criptomonedas. Los depósitos se procesan en tiempo real.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cuánto tardan los retiros?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Los retiros se procesan entre 24-48 horas hábiles. Transferencias bancarias pueden tardar 1-2 días adicionales según tu banco.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cómo solicito un retiro?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Ve a tu cuenta → Retirar → Selecciona el método → Ingresa el monto. Revisa tus datos y confirma. Tu retiro será procesado en la siguiente fecha de pago.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Hay comisiones en retiros?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>PlayChile no cobra comisiones en retiros. Sin embargo, tu banco puede aplicar cargos según su política.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Mi dinero está seguro?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Sí. PlayChile utiliza encriptación SSL de 256 bits y cumple con los más altos estándares de seguridad internacionales.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <span class="category-badge">🎁 BONOS & PROMOCIONES</span>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cuál es el bono de bienvenida?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Obtén un bono del 100% hasta $500.000 CLP en tu primer depósito. Requisito: apostar 25 veces el monto del bono en cualquier juego.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cómo activo mi código promo?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>En tu perfil → Promociones → Ingresa el código. Algunos códigos se activan automáticamente al hacer depósito.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Qué significa "requisito 25x"?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Debes apostar 25 veces el monto del bono antes de poder retirarlo. Ejemplo: bono $10.000 = debe apostar $250.000 en total.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <span class="category-badge">🎲 CÓMO JUGAR</span>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Los juegos son justos?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Sí. Todos nuestros juegos usan RNG certificado por GLI y eCOGRA. Auditorías independientes regulares garantizan equidad total.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cuál es el RTP de los juegos?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>El RTP (Retorno al Jugador) varía entre 94-98% según el juego. Consulta cada juego para ver su RTP específico.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Hay límites de apuesta?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Sí, límites entre $100 y $50.000 CLP por giro según el juego. Diseñados para promover juego responsable.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Puedo jugar desde móvil?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Completamente. PlayChile es 100% responsive. Funciona perfecto en Android e iOS desde el navegador o nuestra app.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <span class="category-badge">❓ OTROS</span>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Cuáles son tus canales de soporte?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Soporte 24/7 via: Chat en vivo (este), WhatsApp Business, Email, y teléfono. Respuesta garantizada en menos de 15 minutos.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <h3>¿Qué es la autoexclusión?</h3>
+                                <span class="accordion-icon">▼</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Herramienta de juego responsable que te permite autobloquearte temporalmente. Ve a Responsabilidad de Juego → Autoexclusión.</p>
+                            </div>
+                        </div>
+                    </div></div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <h2>💬 Soporte en Vivo</h2>
+                <div class="chat-container chat-launcher">
+                    <div class="chat-header">
+                        <p>Chat en vivo de PlayChile</p>
+                        <div class="chat-status">
+                            <span class="status-dot"></span>
+                            <span>Disponibles ahora</span>
+                        </div>
+                    </div>
+                    <div class="chat-launcher-body">
+                        <div class="chat-launcher-icon">💬</div>
+                        <p class="chat-launcher-text">Habla con nuestro equipo de soporte en tiempo real. Se abrirá en una pestaña nueva.</p>
+                        <a class="chat-launcher-btn" href="https://direct.lc.chat/19580488" target="_blank" rel="noopener">
+                            Iniciar Chat en Vivo →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-section">
+            <h3>📞 Otros Canales de Contacto</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <p>WhatsApp Business</p>
+                    <a href="https://wa.me/56912345678" target="_blank">
+                        📱 +56 9 1234 5678
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <p>Correo Electrónico</p>
+                    <a href="mailto:support@playchile.cl">
+                        ✉️ support@playchile.cl
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <p>Horario de Soporte</p>
+                    <a href="#">
+                        🕐 24/7 - Siempre Activos
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <p>Centro de Ayuda</p>
+                    <a href="https://playchile.cl/ayuda" target="_blank">
+                        📚 Ver más artículos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>PlayChile © 2024 | 
+            <a href="https://playchile.cl/terminos">Términos y Condiciones</a> | 
+            <a href="https://playchile.cl/privacidad">Política de Privacidad</a> | 
+            <a href="https://playchile.cl/juego-responsable">Juego Responsable</a>
+        </p>
+        <div class="footer-disclaimer">
+            <p>Juega responsablemente. Si sientes que el juego es un problema, busca ayuda en www.infoapostadores.cl</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            
+            // Cerrar otros items (opcional - descomenta si quieres solo uno abierto)
+            // document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
+            //     if (activeItem !== item) {
+            //         activeItem.classList.remove('active');
+            //     }
+            // });
+            
+            // Toggle actual
+            item.classList.toggle('active');
+        }
+
+        // Abrir primer item por defecto
+        document.querySelector('.accordion-item').classList.add('active');
+    </script>
+</body>
+</html>
