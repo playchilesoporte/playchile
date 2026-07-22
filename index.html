@@ -288,51 +288,23 @@
             50% { opacity: 0.5; }
         }
 
-        .chat-launcher-body {
+        iframe {
+            border: none;
+            width: 100%;
+            height: 600px;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            gap: 16px;
         }
 
-        .chat-launcher-icon {
-            font-size: 48px;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        @media (max-width: 900px) {
+            iframe {
+                height: 500px;
+            }
         }
 
-        .chat-launcher-text {
-            color: #cccccc;
-            font-size: 13px;
-            max-width: 280px;
-            line-height: 1.6;
-        }
-
-        .chat-launcher-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #000000;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .chat-launcher-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .chat-launcher {
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
+        @media (max-width: 600px) {
+            iframe {
+                height: 350px;
+            }
         }
 
         /* Contact Info Section */
@@ -442,8 +414,8 @@
                 font-size: 28px;
             }
 
-            .chat-launcher-body {
-                padding: 30px 15px;
+            iframe {
+                height: 400px;
             }
 
             .contact-grid {
@@ -573,17 +545,12 @@
                 font-size: 12px;
             }
 
-            .chat-launcher-body {
-                padding: 25px 12px;
-                gap: 12px;
+            iframe {
+                height: 1000px !important;
             }
 
-            .chat-launcher-icon {
-                font-size: 36px;
-            }
-
-            .chat-launcher {
-                min-height: 220px;
+            .chat-container {
+                min-height: 1020px;
             }
 
             .footer {
@@ -621,7 +588,7 @@
         <div class="header-content">
             <div class="header-logo">
                 <span>🎰</span>
-                <h1>PlayChile Casino</h1>
+                <h1>PlayChile</h1>
             </div>
             <p>Centro de Soporte - Resolvemos tus dudas en tiempo real</p>
         </div>
@@ -632,9 +599,9 @@
         <div class="intro-banner">
             <div class="intro-text">
                 <h2>¿Necesitas ayuda?</h2>
-                <p>Estamos disponibles 24/7 para resolver todas tus preguntas</p>
+                <p>Estamos disponibles para resolver todas tus preguntas</p>
             </div>
-            <button class="intro-btn" onclick="window.open('https://direct.lc.chat/19580488', '_blank');">
+            <button class="intro-btn" onclick="document.querySelector('.chat-container').scrollIntoView({ behavior: 'smooth' });">
                 Ir al Chat →
             </button>
         </div>
@@ -654,7 +621,7 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Aceptamos transferencia bancaria, tarjetas de crédito/débito, billeteras digitales y criptomonedas. Los depósitos se procesan en tiempo real.</p>
+                                <p>Aceptamos transferencia bancaria, tarjetas de crédito/débito y Mach. Los depósitos se procesan en tiempo real.</p>
                             </div>
                         </div>
 
@@ -664,7 +631,7 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Los retiros se procesan entre 24-48 horas hábiles. Transferencias bancarias pueden tardar 1-2 días adicionales según tu banco.</p>
+                                <p>Los retiros se procesan en un par de minutos. El primer retiro debemos verificar tu identidad y ahí tardamos hasta 48 horas Hábiles en revisar y aceptar tus documentos.</p>
                             </div>
                         </div>
 
@@ -674,7 +641,13 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Ve a tu cuenta → Retirar → Selecciona el método → Ingresa el monto. Revisa tus datos y confirma. Tu retiro será procesado en la siguiente fecha de pago.</p>
+                                <p>1. Inicia sesión y haz clic en el botón "Retirar" (en la barra superior, al lado de Depositar).
+
+2. Selecciona "Transferencia Bancaria" como método de pago.
+
+3. Ingresa el monto a retirar (Mínimo: $15.000 CLP) y completa tus datos bancarios (banco, tipo de cuenta, número, RUT y teléfono).
+
+4. Haz clic en el botón amarillo "Retirar" para procesar tu solicitud de forma segura y prioritaria.</p>
                             </div>
                         </div>
 
@@ -708,27 +681,7 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Obtén un bono del 100% hasta $500.000 CLP en tu primer depósito. Requisito: apostar 25 veces el monto del bono en cualquier juego.</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <h3>¿Cómo activo mi código promo?</h3>
-                                <span class="accordion-icon">▼</span>
-                            </div>
-                            <div class="accordion-content">
-                                <p>En tu perfil → Promociones → Ingresa el código. Algunos códigos se activan automáticamente al hacer depósito.</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <h3>¿Qué significa "requisito 25x"?</h3>
-                                <span class="accordion-icon">▼</span>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Debes apostar 25 veces el monto del bono antes de poder retirarlo. Ejemplo: bono $10.000 = debe apostar $250.000 en total.</p>
+                                <p>Obtén un bono del 100% hasta $200.000 CLP en tu primer depósito. Sin "Rollover" puedes activarlo solo cuando tu saldo es menor a $1.000 en tu perfil opcion BONIFICACIONES.</p>
                             </div>
                         </div>
                     </div>
@@ -786,7 +739,7 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Soporte 24/7 via: Chat en vivo (este), WhatsApp Business, Email, y teléfono. Respuesta garantizada en menos de 15 minutos.</p>
+                                <p>Soporte via: Chat en vivo (este), Email. Respuesta garantizada en menos de 15 minutos.</p>
                             </div>
                         </div>
 
@@ -796,16 +749,16 @@
                                 <span class="accordion-icon">▼</span>
                             </div>
                             <div class="accordion-content">
-                                <p>Herramienta de juego responsable que te permite autobloquearte temporalmente. Ve a Responsabilidad de Juego → Autoexclusión.</p>
+                                <p>Herramienta de juego responsable que te permite auto bloquearte temporalmente. Contáctanos si lo necesitas.</p>
                             </div>
                         </div>
-                    </div></div>
+                    </div>
             </div>
 
             <!-- Chat Section -->
             <div class="chat-section">
                 <h2>💬 Soporte en Vivo</h2>
-                <div class="chat-container chat-launcher">
+                <div class="chat-container">
                     <div class="chat-header">
                         <p>Chat en vivo de PlayChile</p>
                         <div class="chat-status">
@@ -813,13 +766,7 @@
                             <span>Disponibles ahora</span>
                         </div>
                     </div>
-                    <div class="chat-launcher-body">
-                        <div class="chat-launcher-icon">💬</div>
-                        <p class="chat-launcher-text">Habla con nuestro equipo de soporte en tiempo real. Se abrirá en una pestaña nueva.</p>
-                        <a class="chat-launcher-btn" href="https://direct.lc.chat/19580488" target="_blank" rel="noopener">
-                            Iniciar Chat en Vivo →
-                        </a>
-                    </div>
+                    <iframe src="https://secure.livechatinc.com/licence/19580488/v2/open_chat.cgi"></iframe>
                 </div>
             </div>
         </div>
@@ -830,20 +777,20 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <p>WhatsApp Business</p>
-                    <a href="https://wa.me/56912345678" target="_blank">
-                        📱 +56 9 1234 5678
+                    <a href="https://wa.me/56929836813" target="_blank">
+                        📱 +56929836813
                     </a>
                 </div>
                 <div class="contact-item">
                     <p>Correo Electrónico</p>
-                    <a href="mailto:support@playchile.cl">
-                        ✉️ support@playchile.cl
+                    <a href="mailto:contacto@playchile.info">
+                        ✉️ contacto@playchile.info
                     </a>
                 </div>
                 <div class="contact-item">
                     <p>Horario de Soporte</p>
                     <a href="#">
-                        🕐 24/7 - Siempre Activos
+                        🕐 Lunes a Domingo de 10:00 a 22:00 Hrs
                     </a>
                 </div>
                 <div class="contact-item">
