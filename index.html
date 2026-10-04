@@ -332,6 +332,34 @@
             box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
         }
 
+        .chat-launcher-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 240px;
+        }
+
+        .chat-launcher-btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%);
+            color: #000000;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .chat-launcher-btn-whatsapp:hover {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .chat-launcher-btn-telegram {
+            background: linear-gradient(135deg, #29b6f6 0%, #0288d1 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(41, 182, 246, 0.3);
+        }
+
+        .chat-launcher-btn-telegram:hover {
+            box-shadow: 0 6px 20px rgba(41, 182, 246, 0.4);
+        }
+
         .chat-launcher {
             min-height: 320px;
             display: flex;
@@ -641,7 +669,7 @@
                 <h2>¿Necesitas ayuda?</h2>
                 <p>Estamos disponibles 24/7 para resolver todas tus preguntas</p>
             </div>
-            <button class="intro-btn" onclick="window.open('https://direct.lc.chat/19580488', '_blank');">
+            <button class="intro-btn" onclick="window.open('https://wa.me/56929836813?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20soporte%20de%20PlayChile%20y%20necesito%20ayuda.', '_blank');">
                 Ir al Chat →
             </button>
         </div>
@@ -991,10 +1019,15 @@ En el menú Promociones: Dentro de "PROMOCIONES" > pestaña "Activo", encontrar�
                     </div>
                     <div class="chat-launcher-body">
                         <div class="chat-launcher-icon">💬</div>
-                        <p class="chat-launcher-text">Habla con nuestro equipo de soporte en tiempo real. Se abrirá en una pestaña nueva.</p>
-                        <a class="chat-launcher-btn" href="https://direct.lc.chat/19580488" target="_blank" rel="noopener">
-                            Iniciar Chat en Vivo →
-                        </a>
+                        <p class="chat-launcher-text">Habla con nuestro equipo de soporte en tiempo real. Elige tu app preferida, se abrirá en una pestaña nueva.</p>
+                        <div class="chat-launcher-buttons">
+                            <a class="chat-launcher-btn chat-launcher-btn-whatsapp" href="https://wa.me/56929836813?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20soporte%20de%20PlayChile%20y%20necesito%20ayuda." target="_blank" rel="noopener">
+                                📱 WhatsApp →
+                            </a>
+                            <a class="chat-launcher-btn chat-launcher-btn-telegram" href="https://t.me/playchile" target="_blank" rel="noopener">
+                                ✈️ Telegram →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
