@@ -1,0 +1,61 @@
+media: false
+
+content:
+  - name: faq
+    label: Preguntas frecuentes
+    type: file
+    path: _data/faq.yml
+    fields:
+      - name: categorias
+        label: Categorías
+        type: object
+        list: true
+        fields:
+          - name: nombre
+            label: Nombre de la categoría (con emoji)
+            type: string
+            required: true
+          - name: preguntas
+            label: Preguntas
+            type: object
+            list: true
+            fields:
+              - name: pregunta
+                label: Pregunta
+                type: string
+                required: true
+              - name: respuesta
+                label: Respuesta
+                type: text
+                required: true
+
+  - name: contacto
+    label: Contacto y textos
+    type: file
+    path: _data/contacto.yml
+    fields:
+      - name: intro_titulo
+        label: Título del banner de arriba
+        type: string
+      - name: intro_texto
+        label: Texto del banner de arriba
+        type: string
+      - name: whatsapp_numero
+        label: Número de WhatsApp (solo dígitos, con 56, sin +)
+        type: string
+        required: true
+      - name: whatsapp_mensaje
+        label: Mensaje que aparece escrito al abrir WhatsApp
+        type: string
+      - name: telegram_url
+        label: Enlace de Telegram
+        type: string
+      - name: email
+        label: Correo de contacto
+        type: string
+      - name: horario
+        label: Horario de soporte
+        type: string
+      - name: centro_ayuda_url
+        label: Enlace del Centro de Ayuda
+        type: string
