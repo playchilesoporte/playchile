@@ -7,7 +7,10 @@ content:
       - name: categorias
         label: Categorías
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.nombre}"
         fields:
           - name: nombre
             label: Nombre de la categoría
@@ -16,7 +19,10 @@ content:
           - name: preguntas
             label: Preguntas
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.pregunta}"
             fields:
               - name: pregunta
                 label: Pregunta
