@@ -1,79 +1,184 @@
 categorias:
-- nombre: Depósitos, retiros y verificación
-  preguntas:
-  - pregunta: ¿Cuáles son los métodos de depósito?
-    respuesta: Aceptamos transferencia bancaria, tarjetas de crédito/débito y Mach. Los depósitos se procesan en tiempo real.
-  - pregunta: ¿Cuáles son los montos mínimos y máximos para depositar?
-    respuesta: |-
-      El monto mínimo para recargar saldo en tu cuenta es de $1.000 CLP y el límite máximo regular es de $1.000.000 CLP.
-      Nota importante: Ten en consideración que, debido a las restricciones de seguridad estándar de los bancos chilenos para transferencias a nuevos destinatarios, tu primer depósito en la plataforma podría tener un límite máximo de $250.000 CLP.
-  - pregunta: ¿Cómo solicito un retiro?
-    respuesta: |-
-      1. Inicia sesión y haz clic en el botón "Retirar" (en la barra superior, al lado de Depositar). 2. Selecciona "Transferencia Bancaria" como método de pago. 3. Ingresa el monto a retirar (Mínimo: $15.000 CLP) y completa tus datos bancarios (banco, tipo de cuenta, número, RUT y teléfono). 4. Haz clic en el botón amarillo "Retirar" para procesar tu solicitud de forma segura y prioritaria.
-      Puedes solicitar retiros de tus ganancias a partir de un mínimo de $15.000 CLP. El límite máximo permitido para retirar es de $1.000.000 CLP por día.
-      Nota importante: Ten en consideración que, debido a las restricciones de seguridad estándar de los bancos chilenos para transferencias a nuevos destinatarios, tu segundo retiro en la plataforma podrías realizarlo 24 horas después de realizar el primero.
-  - pregunta: ¿Hay comisiones en retiros?
-    respuesta: PlayChile no cobra comisiones en retiros. Sin embargo, tu banco puede aplicar cargos según su política.
-  - pregunta: ¿Mi dinero está seguro?
-    respuesta: Sí. PlayChile utiliza encriptación SSL de 256 bits y cumple con los más altos estándares de seguridad internacionales.
-  - pregunta: ¿Cuánto tiempo tarda en llegar mi dinero cuando solicito un retiro?
-    respuesta: Nuestro sistema es sumamente rápido. Si tu cuenta ya se encuentra verificada (KYC completado), el pago se procesará y se enviará en tan solo un par de minutos.
-  - pregunta: ¿Es obligatorio verificar mi cuenta para poder retirar dinero?
-    respuesta: Sí. Por políticas de seguridad y para proteger los fondos de nuestros usuarios, es estrictamente obligatorio completar la verificación de identidad (proceso KYC) antes de procesar tu primer retiro.
-  - pregunta: ¿Qué documentos necesito subir para verificar mi cuenta?
-    respuesta: Para verificar tu identidad debes ingresar al menú "KYC" y subir una fotografía clara, legible y sin recortes de tu Cédula de Identidad chilena o de tu Pasaporte vigente.
-  - pregunta: ¿Cuánto tiempo demora el equipo en aprobar mi verificación?
-    respuesta: El proceso de revisión de documentos por parte de nuestro equipo de soporte puede tomar hasta un máximo de 48 horas.
-  - pregunta: ¿Por qué fue rechazada la verificación de mi cuenta?
-    respuesta: La causa más común de rechazo es la incongruencia de datos. Por políticas de seguridad y prevención de multicuentas, es obligatorio que el nombre y los datos de tu documento de identidad (Cédula o Pasaporte) coincidan lógicamente con el nombre de usuario y el correo electrónico que utilizaste al registrarte en PlayChile. Si el sistema detecta discrepancias o sospecha de la creación de múltiples cuentas por un mismo usuario, el documento será rechazado.
-- nombre: Bonos y promociones
-  preguntas:
-  - pregunta: ¿Cómo funciona el bono de bienvenida del 100%?
-    respuesta: Al realizar tu primer depósito, te otorgamos un saldo extra equivalente al 100% de tu recarga para que tengas una segunda oportunidad de jugar. El monto máximo de bonificación que entregamos es de $250.000 CLP. Si depositas una cantidad mayor (por ejemplo, $300.000), se te asignará igualmente el tope máximo de $250.000 de bono.
-  - pregunta: ¿Dónde se encuentra el dinero de mi bono?
-    respuesta: El bono no se mezcla inmediatamente con tu dinero real. Este saldo de regalo se guarda de forma segura en tu cuenta. Para verlo, debes ir al menú principal de tu perfil y hacer clic en la sección "BONIFICACIONES", específicamente en la pestaña de "Saldo de bonificación de intercambio".
-  - pregunta: ¿Cuándo y cómo puedo usar este bono?
-    respuesta: Este bono está diseñado como un respaldo. Permanecerá guardado en tu sección de bonificaciones hasta que tu saldo real de juego sea menor a $50 CLP. Desde ese momento, se habilitará la opción para que puedas realizar el intercambio y transferir el bono a tu saldo real usando el botón "Intercambio".
-  - pregunta: ¿Hay juegos restringidos para usar este bono?
-    respuesta: No. Una vez que tu saldo real baja de $50 y transfieres tu bonificación al saldo principal, puedes utilizar ese dinero libremente en cualquier lugar y juego de nuestro casino.
-  - pregunta: ¿Qué significa que el bono sea "Sin Rollover"?
-    respuesta: Significa que no te exigimos cumplir con requisitos de apuesta imposibles (como tener que apostar 30 o 40 veces el valor del bono) para poder usar ese saldo. Una vez que tu saldo baja al mínimo y activas tu bono, el dinero es tuyo para jugar en la plataforma a un tipo de cambio directo de 1 Bono = 1 CLP
-  - pregunta: ¿Qué es la Rueda Diaria y cómo puedo participar?
-    respuesta: 'La Rueda Diaria es una promoción que te permite realizar un "Mega Girar" todos los días para ganar premios. Para participar, solo necesitas cumplir dos requisitos: estar registrado en PlayChile y tener un saldo disponible en tu cuenta mayor a $1 CLP.'
-  - pregunta: ¿Cuántas veces puedo girar la rueda?
-    respuesta: Puedes girar la rueda de forma gratuita una vez al día, siempre y cuando mantengas el saldo mínimo requerido (mayor a $1 CLP).
-  - pregunta: ¿Qué tipo de premios puedo ganar?
-    respuesta: |-
-      La rueda incluye diferentes niveles de premios:
+  - nombre: Depósitos, retiros y verificación
+    preguntas:
+      - pregunta: ¿Cuáles son los métodos de depósito?
+        respuesta: Aceptamos transferencia bancaria, tarjetas de crédito/débito y Mach.
+          Los depósitos se procesan en tiempo real.
+      - pregunta: ¿Cuáles son los montos mínimos y máximos para depositar?
+        respuesta: >-
+          El monto mínimo para recargar saldo en tu cuenta es de $1.000 CLP y el
+          límite máximo regular es de $1.000.000 CLP.
 
-      Premios en efectivo (CLP): Montos que van desde los 50 CLP hasta los 5.000 CLP, los cuales se acreditan en tu cuenta.
+          Nota importante: Ten en consideración que, debido a las restricciones
+          de seguridad estándar de los bancos chilenos para transferencias a
+          nuevos destinatarios, tu primer depósito en la plataforma podría tener
+          un límite máximo de $250.000 CLP.
+      - pregunta: ¿Cómo solicito un retiro?
+        respuesta: >-
+          1. Inicia sesión y haz clic en el botón "Retirar" (en la barra
+          superior, al lado de Depositar). 2. Selecciona "Transferencia
+          Bancaria" como método de pago. 3. Ingresa el monto a retirar (Mínimo:
+          $15.000 CLP) y completa tus datos bancarios (banco, tipo de cuenta,
+          número, RUT y teléfono). 4. Haz clic en el botón amarillo "Retirar"
+          para procesar tu solicitud de forma segura y prioritaria.
 
-      Mega Win: El premio mayor físico o de alto valor, como un iPhone 17 Pro Max.
-  - pregunta: ¿El dinero que gano en la rueda lo puedo retirar inmediatamente?
-    respuesta: Sí, los premios en efectivo (CLP) se suman directamente a tu saldo real y pueden ser utilizados para seguir jugando o ser retirados según los montos mínimos de retiro de la plataforma.
-  - pregunta: ¿Qué pasa si gano el "Mega Win" (ej. iPhone 17 Pro Max)?
-    respuesta: Si la rueda se detiene en la casilla del Mega Win, nuestro equipo de soporte se pondrá en contacto contigo a través del correo electrónico o número de teléfono registrado en tu cuenta dentro de las próximas 24 a 48 horas hábiles para coordinar la entrega de tu premio.
-  - pregunta: ¿En qué consiste el Bono 100% en todos los depósitos?
-    respuesta: Por cada recarga que realices en tu cuenta, PlayChile te otorga un saldo de bonificación del 100% del monto depositado. Cada depósito genera un bono independiente dentro de tu perfil.
-  - pregunta: ¿El bono se activa automáticamente al depositar?
-    respuesta: 'No, el bono debe ser activado manualmente por el jugador. Para activarlo: Ingresa a tu perfil y dirígete a la sección "PROMOCIONES" del menú lateral.   Haz clic en la pestaña "Disponible".   Ubica la tarjeta de tu bono de depósito y selecciónalo para ponerlo en estado activo.'
-  - pregunta: ¿Puedo tener más de un bono activo si realizo varias recargas?
-    respuesta: No simultáneamente. Cada depósito genera un bono individual que queda guardado en la pestaña "Disponible". Puedes activar y desactivar tus bonos según prefieras desde el panel de promociones, pero todas las apuestas que realices sumarán exclusivamente al bono que mantengas en estado "Activo" en ese momento.
-  - pregunta: ¿Cuál es el requisito de apuesta (rollover) para liberar las ganancias?
-    respuesta: El bono cuenta con un requisito de apuesta de Rollover x15 sobre el valor de la bonificación. Por ejemplo, si recibes un bono de 300 CLP, la necesidad de recuperar (apostar) será de 4.500 CLP ($300 X 15). Una vez completado ese monto en jugadas válidas, el saldo se libera a tu cuenta.
-  - pregunta: ¿Cuánto tiempo tengo para completar el rollover?
-    respuesta: Cada bono tiene una vigencia total de 20 días desde el momento en que se genera. Puedes revisar los días y horas restantes en cualquier momento en el apartado "Plazo de validez" dentro de la tarjeta del bono. Si el plazo expira antes de cumplir el rollover, el bono pasará a la pestaña "Expirado".
-  - pregunta: ¿Dónde puedo revisar mi progreso y cuánto me falta para liberar el bono?
-    respuesta: "Tienes dos formas de verificarlo:\nEn la barra superior: Al navegar por el sitio verás una barra amarilla fija con el objetivo monetario que te falta alcanzar y un botón de acceso directo.  \nEn el menú Promociones: Dentro de \"PROMOCIONES\" > pestaña \"Activo\", encontrarás la ficha completa con tu monto bonificado, el valor apostado en \"Recuperado\" y la cifra exacta en \"NECESIDAD DE RECUPERAR\"."
-  - pregunta: ¿Qué juegos suman para cumplir el rollover del bono activo?
-    respuesta: 'Únicamente suman las jugadas realizadas en los títulos permitidos (puedes consultar la lista directa presionando el botón "Juegos Abiertos" en la barra superior). Los títulos habilitados incluyen:   Slots de Pragmatic Play: Gates of Olympus, The Dog House Megaways, Sweet Bonanza, 5 Lions Megaways, Chilli Heat, Sugar Supreme Powernudge, Wolf Gold, 5 Lions, 5 Lions Dance, 5 Lions Gold, Bigger Bass Bonanza, Diamond Strike, Fruit Party y Wild West Gold.   Slots de PG Soft: Fortune Mouse, Fortune Ox, Fortune Rabbit, Fortune Tiger, Ganesha Gold y Ninja Raccoon Frenzy.'
-- nombre: Cómo jugar
-  preguntas:
-  - pregunta: ¿Los juegos son justos?
-    respuesta: Sí. Todos nuestros juegos usan RNG certificado por GLI y eCOGRA. Auditorías independientes regulares garantizan equidad total.
-  - pregunta: ¿Cuál es el RTP de los juegos?
-    respuesta: El RTP (Retorno al Jugador) varía entre 94-98% según el juego. Consulta cada juego para ver su RTP específico.
-- nombre: Juego responsable
-  preguntas:
-  - pregunta: ¿Qué es la autoexclusión?
-    respuesta: Herramienta de juego responsable que te permite autobloquearte temporalmente. Ve a Responsabilidad de Juego → Autoexclusión.
+          Puedes solicitar retiros de tus ganancias a partir de un mínimo de
+          $15.000 CLP. El límite máximo permitido para retirar es de $1.000.000
+          CLP por día.
+
+          Nota importante: Ten en consideración que, debido a las restricciones
+          de seguridad estándar de los bancos chilenos para transferencias a
+          nuevos destinatarios, tu segundo retiro en la plataforma podrías
+          realizarlo 24 horas después de realizar el primero.
+      - pregunta: ¿Hay comisiones en retiros?
+        respuesta: PlayChile no cobra comisiones en retiros. Sin embargo, tu banco puede
+          aplicar cargos según su política.
+      - pregunta: ¿Mi dinero está seguro?
+        respuesta: Sí. PlayChile utiliza encriptación SSL de 256 bits y cumple con los
+          más altos estándares de seguridad internacionales.
+      - pregunta: ¿Cuánto tiempo tarda en llegar mi dinero cuando solicito un retiro?
+        respuesta: Nuestro sistema es sumamente rápido. Si tu cuenta ya se encuentra
+          verificada (KYC completado), el pago se procesará y se enviará en tan
+          solo un par de minutos.
+      - pregunta: ¿Es obligatorio verificar mi cuenta para poder retirar dinero?
+        respuesta: Sí. Por políticas de seguridad y para proteger los fondos de nuestros
+          usuarios, es estrictamente obligatorio completar la verificación de
+          identidad (proceso KYC) antes de procesar tu primer retiro.
+      - pregunta: ¿Qué documentos necesito subir para verificar mi cuenta?
+        respuesta: Para verificar tu identidad debes ingresar al menú "KYC" y subir una
+          fotografía clara, legible y sin recortes de tu Cédula de Identidad
+          chilena o de tu Pasaporte vigente.
+      - pregunta: ¿Cuánto tiempo demora el equipo en aprobar mi verificación?
+        respuesta: El proceso de revisión de documentos por parte de nuestro equipo de
+          soporte puede tomar hasta un máximo de 48 horas.
+      - pregunta: ¿Por qué fue rechazada la verificación de mi cuenta?
+        respuesta: La causa más común de rechazo es la incongruencia de datos. Por
+          políticas de seguridad y prevención de multicuentas, es obligatorio
+          que el nombre y los datos de tu documento de identidad (Cédula o
+          Pasaporte) coincidan lógicamente con el nombre de usuario y el correo
+          electrónico que utilizaste al registrarte en PlayChile. Si el sistema
+          detecta discrepancias o sospecha de la creación de múltiples cuentas
+          por un mismo usuario, el documento será rechazado.
+  - nombre: Bonos y promociones
+    preguntas:
+      - pregunta: ¿Cómo funciona el bono de bienvenida del 100%?
+        respuesta: Al realizar tu primer depósito, te otorgamos un saldo extra
+          equivalente al 100% de tu recarga para que tengas una segunda
+          oportunidad de jugar. El monto máximo de bonificación que entregamos
+          es de $250.000 CLP. Si depositas una cantidad mayor (por ejemplo,
+          $300.000), se te asignará igualmente el tope máximo de $250.000 de
+          bono.
+      - pregunta: ¿Dónde se encuentra el dinero de mi bono?
+        respuesta: El bono no se mezcla inmediatamente con tu dinero real. Este saldo de
+          regalo se guarda de forma segura en tu cuenta. Para verlo, debes ir al
+          menú principal de tu perfil y hacer clic en la sección
+          "BONIFICACIONES", específicamente en la pestaña de "Saldo de
+          bonificación de intercambio".
+      - pregunta: ¿Cuándo y cómo puedo usar este bono?
+        respuesta: Este bono está diseñado como un respaldo. Permanecerá guardado en tu
+          sección de bonificaciones hasta que tu saldo real de juego sea menor a
+          $50 CLP. Desde ese momento, se habilitará la opción para que puedas
+          realizar el intercambio y transferir el bono a tu saldo real usando el
+          botón "Intercambio".
+      - pregunta: ¿Hay juegos restringidos para usar este bono?
+        respuesta: No. Una vez que tu saldo real baja de $50 y transfieres tu
+          bonificación al saldo principal, puedes utilizar ese dinero libremente
+          en cualquier lugar y juego de nuestro casino.
+      - pregunta: ¿Qué significa que el bono sea "Sin Rollover"?
+        respuesta: Significa que no te exigimos cumplir con requisitos de apuesta
+          imposibles (como tener que apostar 30 o 40 veces el valor del bono)
+          para poder usar ese saldo. Una vez que tu saldo baja al mínimo y
+          activas tu bono, el dinero es tuyo para jugar en la plataforma a un
+          tipo de cambio directo de 1 Bono = 1 CLP
+      - pregunta: ¿Qué es la Rueda Diaria y cómo puedo participar?
+        respuesta: 'La Rueda Diaria es una promoción que te permite realizar un "Mega
+          Girar" todos los días para ganar premios. Para participar, solo
+          necesitas cumplir dos requisitos: estar registrado en PlayChile y
+          tener un saldo disponible en tu cuenta mayor a $1 CLP.'
+      - pregunta: ¿Cuántas veces puedo girar la rueda?
+        respuesta: Puedes girar la rueda de forma gratuita una vez al día, siempre y
+          cuando mantengas el saldo mínimo requerido (mayor a $1 CLP).
+      - pregunta: ¿Qué tipo de premios puedo ganar?
+        respuesta: >-
+          La rueda incluye diferentes niveles de premios:
+
+
+          Premios en efectivo (CLP): Montos que van desde los 50 CLP hasta los
+          5.000 CLP, los cuales se acreditan en tu cuenta.
+
+
+          Mega Win: El premio mayor físico o de alto valor, como un iPhone 17
+          Pro Max.
+      - pregunta: ¿El dinero que gano en la rueda lo puedo retirar inmediatamente?
+        respuesta: Sí, los premios en efectivo (CLP) se suman directamente a tu saldo
+          real y pueden ser utilizados para seguir jugando o ser retirados según
+          los montos mínimos de retiro de la plataforma.
+      - pregunta: ¿Qué pasa si gano el "Mega Win" (ej. iPhone 17 Pro Max)?
+        respuesta: Si la rueda se detiene en la casilla del Mega Win, nuestro equipo de
+          soporte se pondrá en contacto contigo a través del correo electrónico
+          o número de teléfono registrado en tu cuenta dentro de las próximas 24
+          a 48 horas hábiles para coordinar la entrega de tu premio.
+      - pregunta: ¿En qué consiste el Bono 100% en todos los depósitos?
+        respuesta: Por cada recarga que realices en tu cuenta, PlayChile te otorga un
+          saldo de bonificación del 100% del monto depositado. Cada depósito
+          genera un bono independiente dentro de tu perfil.
+      - pregunta: ¿El bono se activa automáticamente al depositar?
+        respuesta: 'No, el bono debe ser activado manualmente por el jugador. Para
+          activarlo: Ingresa a tu perfil y dirígete a la sección "PROMOCIONES"
+          del menú lateral.   Haz clic en la pestaña "Disponible".   Ubica la
+          tarjeta de tu bono de depósito y selecciónalo para ponerlo en estado
+          activo.'
+      - pregunta: ¿Puedo tener más de un bono activo si realizo varias recargas?
+        respuesta: No simultáneamente. Cada depósito genera un bono individual que queda
+          guardado en la pestaña "Disponible". Puedes activar y desactivar tus
+          bonos según prefieras desde el panel de promociones, pero todas las
+          apuestas que realices sumarán exclusivamente al bono que mantengas en
+          estado "Activo" en ese momento.
+      - pregunta: ¿Cuál es el requisito de apuesta (rollover) para liberar las ganancias?
+        respuesta: El bono cuenta con un requisito de apuesta de Rollover x15 sobre el
+          valor de la bonificación. Por ejemplo, si recibes un bono de 300 CLP,
+          la necesidad de recuperar (apostar) será de 4.500 CLP ($300 X 15). Una
+          vez completado ese monto en jugadas válidas, el saldo se libera a tu
+          cuenta.
+      - pregunta: ¿Cuánto tiempo tengo para completar el rollover?
+        respuesta: Cada bono tiene una vigencia total de 20 días desde el momento en que
+          se genera. Puedes revisar los días y horas restantes en cualquier
+          momento en el apartado "Plazo de validez" dentro de la tarjeta del
+          bono. Si el plazo expira antes de cumplir el rollover, el bono pasará
+          a la pestaña "Expirado".
+      - pregunta: ¿Dónde puedo revisar mi progreso y cuánto me falta para liberar el
+          bono?
+        respuesta: >-
+          Tienes dos formas de verificarlo:
+
+          En la barra superior: Al navegar por el sitio verás una barra amarilla
+          fija con el objetivo monetario que te falta alcanzar y un botón de
+          acceso directo.  
+
+          En el menú Promociones: Dentro de "PROMOCIONES" > pestaña "Activo",
+          encontrarás la ficha completa con tu monto bonificado, el valor
+          apostado en "Recuperado" y la cifra exacta en "NECESIDAD DE
+          RECUPERAR".
+      - pregunta: ¿Qué juegos suman para cumplir el rollover del bono activo?
+        respuesta: 'Únicamente suman las jugadas realizadas en los títulos permitidos
+          (puedes consultar la lista directa presionando el botón "Juegos
+          Abiertos" en la barra superior). Los títulos habilitados
+          incluyen:   Slots de Pragmatic Play: Gates of Olympus, The Dog House
+          Megaways, Sweet Bonanza, 5 Lions Megaways, Chilli Heat, Sugar Supreme
+          Powernudge, Wolf Gold, 5 Lions, 5 Lions Dance, 5 Lions Gold, Bigger
+          Bass Bonanza, Diamond Strike, Fruit Party y Wild West Gold.   Slots de
+          PG Soft: Fortune Mouse, Fortune Ox, Fortune Rabbit, Fortune Tiger,
+          Ganesha Gold y Ninja Raccoon Frenzy.'
+  - nombre: Cómo jugar
+    preguntas:
+      - pregunta: ¿Los juegos son justos?
+        respuesta: Sí. Todos nuestros juegos usan RNG certificado por GLI y eCOGRA.
+          Auditorías independientes regulares garantizan equidad total.
+      - pregunta: ¿Cuál es el RTP de los juegos?
+        respuesta: El RTP (Retorno al Jugador) varía entre 94-98% según el juego.
+          Consulta cada juego para ver su RTP específico.
+  - nombre: Juego responsable
+    preguntas:
+      - pregunta: ¿Qué es la autoexclusión?
+        respuesta: Herramienta de juego responsable que te permite autobloquearte
+          temporalmente. Si necesitas Excluirte Escribenos.
