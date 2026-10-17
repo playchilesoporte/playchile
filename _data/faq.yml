@@ -1,5 +1,5 @@
 categorias:
-- nombre: 💳 DEPÓSITOS & RETIROS
+- nombre: Depósitos, retiros y verificación
   preguntas:
   - pregunta: ¿Cuáles son los métodos de depósito?
     respuesta: Aceptamos transferencia bancaria, tarjetas de crédito/débito y Mach. Los depósitos se procesan en tiempo real.
@@ -26,7 +26,7 @@ categorias:
     respuesta: El proceso de revisión de documentos por parte de nuestro equipo de soporte puede tomar hasta un máximo de 48 horas.
   - pregunta: ¿Por qué fue rechazada la verificación de mi cuenta?
     respuesta: La causa más común de rechazo es la incongruencia de datos. Por políticas de seguridad y prevención de multicuentas, es obligatorio que el nombre y los datos de tu documento de identidad (Cédula o Pasaporte) coincidan lógicamente con el nombre de usuario y el correo electrónico que utilizaste al registrarte en PlayChile. Si el sistema detecta discrepancias o sospecha de la creación de múltiples cuentas por un mismo usuario, el documento será rechazado.
-- nombre: 🎁 BONOS & PROMOCIONES
+- nombre: Bonos y promociones
   preguntas:
   - pregunta: ¿Cómo funciona el bono de bienvenida del 100%?
     respuesta: Al realizar tu primer depósito, te otorgamos un saldo extra equivalente al 100% de tu recarga para que tengas una segunda oportunidad de jugar. El monto máximo de bonificación que entregamos es de $250.000 CLP. Si depositas una cantidad mayor (por ejemplo, $300.000), se te asignará igualmente el tope máximo de $250.000 de bono.
@@ -67,13 +67,13 @@ categorias:
     respuesta: "Tienes dos formas de verificarlo:\nEn la barra superior: Al navegar por el sitio verás una barra amarilla fija con el objetivo monetario que te falta alcanzar y un botón de acceso directo.  \nEn el menú Promociones: Dentro de \"PROMOCIONES\" > pestaña \"Activo\", encontrarás la ficha completa con tu monto bonificado, el valor apostado en \"Recuperado\" y la cifra exacta en \"NECESIDAD DE RECUPERAR\"."
   - pregunta: ¿Qué juegos suman para cumplir el rollover del bono activo?
     respuesta: 'Únicamente suman las jugadas realizadas en los títulos permitidos (puedes consultar la lista directa presionando el botón "Juegos Abiertos" en la barra superior). Los títulos habilitados incluyen:   Slots de Pragmatic Play: Gates of Olympus, The Dog House Megaways, Sweet Bonanza, 5 Lions Megaways, Chilli Heat, Sugar Supreme Powernudge, Wolf Gold, 5 Lions, 5 Lions Dance, 5 Lions Gold, Bigger Bass Bonanza, Diamond Strike, Fruit Party y Wild West Gold.   Slots de PG Soft: Fortune Mouse, Fortune Ox, Fortune Rabbit, Fortune Tiger, Ganesha Gold y Ninja Raccoon Frenzy.'
-- nombre: 🎲 CÓMO JUGAR
+- nombre: Cómo jugar
   preguntas:
   - pregunta: ¿Los juegos son justos?
     respuesta: Sí. Todos nuestros juegos usan RNG certificado por GLI y eCOGRA. Auditorías independientes regulares garantizan equidad total.
   - pregunta: ¿Cuál es el RTP de los juegos?
     respuesta: El RTP (Retorno al Jugador) varía entre 94-98% según el juego. Consulta cada juego para ver su RTP específico.
-- nombre: ❓ OTROS
+- nombre: Juego responsable
   preguntas:
   - pregunta: ¿Qué es la autoexclusión?
     respuesta: Herramienta de juego responsable que te permite autobloquearte temporalmente. Ve a Responsabilidad de Juego → Autoexclusión.

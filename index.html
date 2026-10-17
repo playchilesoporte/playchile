@@ -1,785 +1,513 @@
 ---
 ---
-{% assign c = site.data.contacto %}{% capture wa_link %}https://wa.me/{{ c.whatsapp_numero }}?text={{ c.whatsapp_mensaje | url_encode | replace: "+", "%20" }}{% endcapture %}
+{%- assign c = site.data.contacto -%}
+{%- capture wa_link %}https://wa.me/{{ c.whatsapp_numero }}?text={{ c.whatsapp_mensaje | url_encode | replace: "+", "%20" }}{% endcapture -%}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayChile Casino - Centro de Soporte</title>
+    <title>Centro de ayuda | PlayChile</title>
+    <meta name="description" content="Respuestas sobre depósitos, retiros, verificación de cuenta y bonos de PlayChile. Contacto directo por WhatsApp, Telegram y correo.">
+    <link rel="icon" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #0d0e11;
+            --surface: #16181d;
+            --surface-2: #1d2027;
+            --border: #262a32;
+            --border-strong: #353a45;
+            --text: #f1f2f4;
+            --muted: #a0a6b1;
+            --subtle: #6f7682;
+            --accent: #ffd200;
+            --accent-hover: #ffdf4d;
+            --accent-ink: #121212;
+            --radius: 10px;
+            --max: 1120px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding-bottom: 40px;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ffd700;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
-
-        .header-logo img {
-            width: 32px;
-            height: 32px;
-        }
-
-        .header h1 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 8px;
-        }
-
-        .header p {
+            font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
             font-size: 15px;
-            color: #cccccc;
-            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
+        a { color: inherit; }
 
-        /* Intro Banner */
-        .intro-banner {
-            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
-            border-left: 4px solid #ffd700;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-        .intro-text h2 {
-            color: #ffd700;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .intro-text p {
-            color: #cccccc;
-            font-size: 14px;
-        }
-
-        .intro-btn {
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #000000;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .intro-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Layout: FAQs + Chat */
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        /* FAQs Section */
-        .faqs-section h2 {
-            color: #ffd700;
-            font-size: 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .faq-categories {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .faq-category {
-            margin-bottom: 10px;
-        }
-
-        .category-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #000000;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        /* Accordion */
-        .accordion-item {
-            background: #1a1a1a;
-            border: 1px solid #333333;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .accordion-item:hover {
-            border-color: #ffd700;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
-        }
-
-        .accordion-item.active {
-            border-color: #ffd700;
-            background: #0a0a0a;
-        }
-
-        .accordion-header {
-            background: #1a1a1a;
-            padding: 14px 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .accordion-item.active .accordion-header {
-            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
-        }
-
-        .accordion-header h3 {
-            font-size: 13px;
-            color: #ffffff;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .accordion-icon {
-            font-size: 18px;
-            transition: transform 0.3s ease;
-            color: #ffd700;
-        }
-
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: #0a0a0a;
-        }
-
-        .accordion-item.active .accordion-content {
-            max-height: 300px;
-        }
-
-        .accordion-content p {
-            padding: 14px 16px;
-            font-size: 12px;
-            color: #cccccc;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Chat Section */
-        .chat-section {
-            display: flex;
-            flex-direction: column;
+        /* Top bar */
+        .topbar {
             position: sticky;
-            top: 20px;
-            align-self: start;
+            top: 0;
+            z-index: 10;
+            background: rgba(13, 14, 17, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .chat-section h2 {
-            color: #ffd700;
-            font-size: 24px;
-            margin-bottom: 20px;
+        .topbar .wrap {
+            height: 64px;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .chat-container {
-            background: #1a1a1a;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            overflow: hidden;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-        }
-
-        .chat-container:hover {
-            border-color: #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
-            padding: 15px;
-            border-bottom: 1px solid #333333;
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header p {
-            font-size: 12px;
-            color: #ffd700;
-            margin: 0;
-        }
-
-        .chat-status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #cccccc;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .chat-launcher-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
             gap: 16px;
         }
 
-        .chat-launcher-icon {
-            font-size: 48px;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
-        }
-
-        .chat-launcher-text {
-            color: #cccccc;
-            font-size: 13px;
-            max-width: 280px;
-            line-height: 1.6;
-        }
-
-        .chat-launcher-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #000000;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .chat-launcher-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .chat-launcher-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            max-width: 240px;
-        }
-
-        .chat-launcher-btn-whatsapp {
-            background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%);
-            color: #000000;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .chat-launcher-btn-whatsapp:hover {
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .chat-launcher-btn-telegram {
-            background: linear-gradient(135deg, #29b6f6 0%, #0288d1 100%);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(41, 182, 246, 0.3);
-        }
-
-        .chat-launcher-btn-telegram:hover {
-            box-shadow: 0 6px 20px rgba(41, 182, 246, 0.4);
-        }
-
-        .chat-launcher {
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Contact Info Section */
-        .contact-section {
-            background: linear-gradient(135deg, #2a2a1a 0%, #1a1a0f 100%);
-            border-left: 4px solid #ffd700;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 40px;
-        }
-
-        .contact-section h3 {
-            color: #ffd700;
-            font-size: 18px;
-            margin-bottom: 20px;
+        .brand {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .contact-item {
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #333333;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            border-color: #ffd700;
-            transform: translateY(-2px);
-        }
-
-        .contact-item p {
-            font-size: 11px;
-            color: #888888;
-            margin-bottom: 8px;
-            margin: 0 0 8px 0;
-        }
-
-        .contact-item a {
-            color: #ffd700;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        .brand img { width: 30px; height: 30px; border-radius: 6px; }
+
+        .brand-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--border-strong);
+            margin: 0 4px;
+        }
+
+        .brand-section { font-weight: 400; color: var(--muted); font-size: 15px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            height: 42px;
+            padding: 0 18px;
+            border-radius: 8px;
+            font: 500 14px/1 'Roboto', sans-serif;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: background-color .15s ease, border-color .15s ease;
+            white-space: nowrap;
+        }
+
+        .btn svg { width: 18px; height: 18px; flex: none; }
+
+        .btn-primary { background: var(--accent); color: var(--accent-ink); }
+        .btn-primary:hover { background: var(--accent-hover); }
+
+        .btn-ghost { border-color: var(--border-strong); color: var(--text); background: transparent; }
+        .btn-ghost:hover { border-color: var(--subtle); background: var(--surface); }
+
+        .btn:focus-visible, summary:focus-visible, .search input:focus-visible, .cat-nav a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Hero */
+        .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+
+        .hero h1 {
+            font-size: 36px;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .hero p { color: var(--muted); font-size: 16px; max-width: 560px; }
+
+        .search { position: relative; max-width: 560px; margin-top: 28px; }
+
+        .search svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            width: 18px;
+            height: 18px;
+            transform: translateY(-50%);
+            color: var(--subtle);
+            pointer-events: none;
+        }
+
+        .search input {
+            width: 100%;
+            height: 52px;
+            padding: 0 16px 0 46px;
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius);
+            color: var(--text);
+            font: 400 15px 'Roboto', sans-serif;
+        }
+
+        .search input::placeholder { color: var(--subtle); }
+        .search input:focus { border-color: var(--subtle); outline: none; }
+
+        /* Layout */
+        .layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 56px;
+            padding-top: 40px;
+            padding-bottom: 64px;
+        }
+
+        .layout > * { min-width: 0; }
+
+        .cat-nav { position: sticky; top: 96px; align-self: start; }
+
+        .cat-nav-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--subtle);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-bottom: 12px;
+        }
+
+        .cat-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+
+        .cat-nav a {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 2px solid transparent;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .cat-nav a:hover { color: var(--text); background: var(--surface); }
+
+        .cat-nav a.active {
+            color: var(--text);
+            background: var(--surface);
+            border-left-color: var(--accent);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .cat-nav .count { color: var(--subtle); font-variant-numeric: tabular-nums; }
+
+        /* FAQ */
+        .faq-group { margin-bottom: 40px; }
+
+        .faq-group h2 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+        }
+
+        .faq-list {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .faq-item + .faq-item { border-top: 1px solid var(--border); }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
-            font-size: 13px;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 20px;
+            font-weight: 500;
+            font-size: 15px;
         }
 
-        .contact-item a:hover {
-            color: #ffed4e;
-            transform: translateX(3px);
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { background: var(--surface-2); }
+
+        .faq-item summary svg {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            color: var(--subtle);
+            transition: transform .2s ease;
         }
+
+        .faq-item[open] summary svg { transform: rotate(180deg); color: var(--text); }
+
+        .faq-answer {
+            padding: 0 20px 18px;
+            color: var(--muted);
+            white-space: pre-line;
+            max-width: 72ch;
+        }
+
+        .no-results {
+            display: none;
+            padding: 28px;
+            border: 1px dashed var(--border-strong);
+            border-radius: var(--radius);
+            color: var(--muted);
+        }
+
+        .no-results strong { color: var(--text); font-weight: 500; }
+
+        /* Contact */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px 40px;
+            align-items: center;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
+
+        .contact h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .contact p { color: var(--muted); }
+
+        .contact-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            margin-top: 14px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .contact-meta span { display: inline-flex; align-items: center; gap: 8px; }
+        .contact-meta svg { width: 16px; height: 16px; color: var(--subtle); }
+        .contact-meta a { color: var(--text); text-decoration: none; }
+        .contact-meta a:hover { text-decoration: underline; }
+
+        .contact-actions { display: flex; gap: 10px; }
 
         /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border-top: 2px solid #ffd700;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 40px;
+        .footer { border-top: 1px solid var(--border); padding: 28px 0 40px; font-size: 13px; color: var(--subtle); }
+
+        .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+
+        .footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+        .footer nav a { text-decoration: none; color: var(--muted); }
+        .footer nav a:hover { color: var(--text); }
+
+        .footer-note { display: flex; align-items: center; gap: 10px; max-width: 520px; }
+
+        .age {
+            flex: none;
+            display: inline-grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid var(--subtle);
+            border-radius: 50%;
+            font-weight: 700;
             font-size: 11px;
-            color: #888888;
-        }
-
-        .footer a {
-            color: #ffd700;
-            text-decoration: none;
-            margin: 0 8px;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #ffed4e;
-        }
-
-        .footer-disclaimer {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #333333;
-            color: #666666;
-            font-size: 10px;
+            color: var(--muted);
         }
 
         /* Responsive */
         @media (max-width: 900px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .layout { grid-template-columns: 1fr; gap: 28px; padding-top: 0; }
+
+            .cat-nav {
+                top: 64px;
+                z-index: 5;
+                margin: 0 -24px;
+                padding: 12px 24px;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
             }
 
-            .chat-section {
-                position: static;
+            .cat-nav-label { display: none; }
+
+            .cat-nav ul { flex-direction: row; overflow-x: auto; gap: 8px; scrollbar-width: none; }
+            .cat-nav ul::-webkit-scrollbar { display: none; }
+
+            .cat-nav a {
+                white-space: nowrap;
+                border: 1px solid var(--border-strong);
+                border-radius: 999px;
+                padding: 7px 14px;
             }
 
-            .intro-banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px;
-            }
+            .cat-nav a.active { border-color: var(--accent); border-radius: 999px; }
 
-            .header h1 {
-                font-size: 28px;
-            }
+            html { scroll-padding-top: 136px; }
 
-            .chat-launcher-body {
-                padding: 30px 15px;
-            }
-
-            .contact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .faq-categories {
-                gap: 15px;
-            }
-
-            .accordion-item {
-                margin-bottom: 8px;
-            }
-
-            .accordion-header {
-                padding: 12px 14px;
-            }
-
-            .accordion-header h3 {
-                font-size: 12px;
-            }
+            .contact { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 600px) {
-            body {
-                padding-bottom: 20px;
-            }
-
-            .header {
-                padding: 20px 15px;
-                border-bottom: 2px solid #ffd700;
-            }
-
-            .header h1 {
-                font-size: 22px;
-                margin-bottom: 5px;
-            }
-
-            .header p {
-                font-size: 13px;
-            }
-
-            .container {
-                padding: 15px 12px;
-                max-width: 100%;
-            }
-
-            .intro-banner {
-                padding: 12px;
-                margin-bottom: 20px;
-                flex-direction: column;
-                gap: 12px;
-                border-left: 3px solid #ffd700;
-            }
-
-            .intro-text h2 {
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-
-            .intro-text p {
-                font-size: 12px;
-            }
-
-            .intro-btn {
-                width: 100%;
-                padding: 10px 20px;
-                font-size: 13px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .faqs-section h2, .chat-section h2 {
-                font-size: 16px;
-                margin-bottom: 12px;
-            }
-
-            .faq-categories {
-                gap: 12px;
-            }
-
-            .accordion-item {
-                margin-bottom: 6px;
-            }
-
-            .accordion-header {
-                padding: 10px 12px;
-            }
-
-            .accordion-header h3 {
-                font-size: 11px;
-            }
-
-            .accordion-content p {
-                padding: 10px 12px;
-                font-size: 11px;
-            }
-
-            .category-badge {
-                font-size: 10px;
-                padding: 4px 10px;
-                margin-bottom: 8px;
-            }
-
-            .contact-section {
-                padding: 15px;
-                margin-bottom: 20px;
-            }
-
-            .contact-section h3 {
-                font-size: 16px;
-                margin-bottom: 12px;
-            }
-
-            .contact-item {
-                padding: 10px;
-            }
-
-            .contact-item p {
-                font-size: 10px;
-            }
-
-            .contact-item a {
-                font-size: 12px;
-            }
-
-            .chat-launcher-body {
-                padding: 25px 12px;
-                gap: 12px;
-            }
-
-            .chat-launcher-icon {
-                font-size: 36px;
-            }
-
-            .chat-launcher {
-                min-height: 220px;
-            }
-
-            .footer {
-                padding: 15px 12px;
-                font-size: 10px;
-            }
-
-            .footer-disclaimer {
-                margin-top: 10px;
-                padding-top: 10px;
-                font-size: 9px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .accordion-item, .contact-item, .chat-container {
-            animation: fadeIn 0.6s ease forwards;
+            .wrap { padding: 0 16px; }
+            .cat-nav { margin: 0 -16px; padding: 12px 16px; }
+            .topbar .btn { height: 36px; padding: 0 12px; font-size: 13px; }
+            .brand-divider, .brand-section { display: none; }
+            .hero { padding: 36px 0 28px; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 15px; }
+            .faq-item summary { padding: 14px 16px; }
+            .faq-answer { padding: 0 16px 16px; }
+            .contact { padding: 20px; }
+            .contact-actions { flex-direction: column; }
+            .contact-actions .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="header-content">
-            <div class="header-logo">
-                <span>🎰</span>
-                <h1>PlayChile </h1>
-            </div>
-            <p>Centro de Soporte - Resolvemos tus dudas en tiempo real</p>
+    <header class="topbar">
+        <div class="wrap">
+            <a class="brand" href="https://playchile.win" aria-label="PlayChile">
+                <img src="assets/logo.png" alt="" width="30" height="30">
+                <span>PlayChile</span>
+                <span class="brand-divider" aria-hidden="true"></span>
+                <span class="brand-section">Centro de ayuda</span>
+            </a>
+            <a class="btn btn-ghost" href="https://playchile.win">Ir al casino</a>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
-        <!-- Main Content: FAQs + Chat -->
-        <div class="content-wrapper">
-            <!-- FAQs Section -->
-            <div class="faqs-section">
-                <h2>❓ Preguntas Frecuentes</h2>
-                
-                <div class="faq-categories">
-                    {%- for cat in site.data.faq.categorias %}
-                    <div class="faq-category">
-                        <span class="category-badge">{{ cat.nombre }}</span>
-                        {% for item in cat.preguntas %}
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <h3>{{ item.pregunta }}</h3>
-                                <span class="accordion-icon">▼</span>
-                            </div>
-                            <div class="accordion-content">
-                                <p>{{ item.respuesta }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
+    <section class="hero">
+        <div class="wrap">
+            <h1>¿En qué te podemos ayudar?</h1>
+            <p>Respuestas sobre depósitos, retiros, verificación de cuenta y bonos. Si no encuentras lo que buscas, escríbenos.</p>
+            <label class="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="search" type="search" placeholder="Busca, por ejemplo: retiro, bono, verificación" autocomplete="off" aria-label="Buscar en preguntas frecuentes">
+            </label>
+        </div>
+    </section>
+
+    <main class="wrap layout">
+        <nav class="cat-nav" aria-label="Categorías">
+            <p class="cat-nav-label">Categorías</p>
+            <ul>
+                {%- for cat in site.data.faq.categorias %}
+                <li><a href="#cat-{{ forloop.index }}" data-cat="cat-{{ forloop.index }}"><span>{{ cat.nombre | escape }}</span><span class="count">{{ cat.preguntas | size }}</span></a></li>
+                {%- endfor %}
+            </ul>
+        </nav>
+
+        <div>
+            {%- for cat in site.data.faq.categorias %}
+            <section class="faq-group" id="cat-{{ forloop.index }}">
+                <h2>{{ cat.nombre | escape }}</h2>
+                <div class="faq-list">
+                    {%- for item in cat.preguntas %}
+                    <details class="faq-item">
+                        <summary>
+                            <span>{{ item.pregunta | escape }}</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="faq-answer">{{ item.respuesta | escape }}</div>
+                    </details>
+                    {%- endfor %}
+                </div>
+            </section>
+            {%- endfor %}
+
+            <p class="no-results" id="no-results"><strong>No encontramos preguntas con esa búsqueda.</strong> Prueba con otra palabra o escríbenos directamente.</p>
+
+            <section class="contact" id="contacto">
+                <div>
+                    <h2>¿Sigues con dudas?</h2>
+                    <p>Nuestro equipo te responde por WhatsApp o Telegram.</p>
+                    <div class="contact-meta">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                            {{ c.horario | escape }}
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            <a href="mailto:{{ c.email }}">{{ c.email | escape }}</a>
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+                            <a href="https://wa.me/{{ c.whatsapp_numero }}" target="_blank" rel="noopener">+{{ c.whatsapp_numero }}</a>
+                        </span>
                     </div>
-                    {% endfor -%}
                 </div>
-            </div>
-
-            <!-- Chat Section -->
-            <div class="chat-section">
-                <h2>💬 Soporte en Vivo</h2>
-                <div class="chat-container chat-launcher">
-                    <div class="chat-header">
-                        <p>Chat en vivo de PlayChile</p>
-                        <div class="chat-status">
-                            <span class="status-dot"></span>
-                            <span>Disponibles ahora</span>
-                        </div>
-                    </div>
-                    <div class="chat-launcher-body">
-                        <div class="chat-launcher-icon">💬</div>
-                        <p class="chat-launcher-text">Habla con nuestro equipo de soporte en tiempo real. Elige tu app preferida, se abrirá en una pestaña nueva.</p>
-                        <div class="chat-launcher-buttons">
-                            <a class="chat-launcher-btn chat-launcher-btn-whatsapp" href="{{ wa_link }}" target="_blank" rel="noopener">
-                                📱 WhatsApp →
-                            </a>
-                            <a class="chat-launcher-btn chat-launcher-btn-telegram" href="{{ c.telegram_url }}" target="_blank" rel="noopener">
-                                ✈️ Telegram →
-                            </a>
-                        </div>
-                    </div>
+                <div class="contact-actions">
+                    <a class="btn btn-primary" href="{{ wa_link }}" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+                        Escribir por WhatsApp
+                    </a>
+                    <a class="btn btn-ghost" href="{{ c.telegram_url }}" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4 3 11l6 2.5M21 4l-3 16-9-6.5M21 4 9 13.5V19l3-3.5"/></svg>
+                        Telegram
+                    </a>
                 </div>
-            </div>
+            </section>
         </div>
+    </main>
 
-        <!-- Contact Info -->
-        <div class="contact-section">
-            <h3>📞 Otros Canales de Contacto</h3>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <p>WhatsApp Business</p>
-                    <a href="https://wa.me/{{ c.whatsapp_numero }}" target="_blank">
-                        📱 +{{ c.whatsapp_numero }}
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <p>Correo Electrónico</p>
-                    <a href="mailto:{{ c.email }}">
-                        ✉️ {{ c.email }}
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <p>Horario de Soporte</p>
-                    <a href="#">
-                        🕐 {{ c.horario }}
-                    </a>
-                </div>
-                <div class="contact-item">
-                    <p>Centro de Ayuda</p>
-                    <a href="{{ c.centro_ayuda_url }}" target="_blank">
-                        📚 Ver más 
-                    </a>
-                </div>
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-note">
+                <span class="age">+18</span>
+                <span>Juega con responsabilidad. Si sientes que el juego es un problema, puedes autoexcluirte o limitar tus apuestas desde tu cuenta, o contactarnos.</span>
             </div>
+            <nav aria-label="Legal">
+                <a href="https://playchile.cl/terminos">Términos y condiciones</a>
+                <a href="https://playchile.win/terms-and-conditions/privacyPolicy">Privacidad</a>
+                <a href="https://playchile.win/main">Juego responsable</a>
+                <a href="{{ c.centro_ayuda_url }}" target="_blank" rel="noopener">Más ayuda</a>
+            </nav>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>PlayChile © 2024 | 
-            <a href="https://playchile.cl/terminos">Términos y Condiciones</a> | 
-            <a href="https://playchile.win/terms-and-conditions/privacyPolicy">Política de Privacidad</a> | 
-            <a href="https://playchile.win/main">Juego Responsable</a>
-        </p>
-        <div class="footer-disclaimer">
-            <p>Juega responsablemente. Si sientes que el juego es un problema, puedes autoexcluirte o limitar tus apuestas diarias contáctanos.</p>
-        </div>
-    </div>
+    </footer>
 
     <script>
-        function toggleAccordion(header) {
-            const item = header.parentElement;
-            
-            // Cerrar otros items (opcional - descomenta si quieres solo uno abierto)
-            // document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
-            //     if (activeItem !== item) {
-            //         activeItem.classList.remove('active');
-            //     }
-            // });
-            
-            // Toggle actual
-            item.classList.toggle('active');
-        }
+        (function () {
+            var input = document.getElementById('search');
+            var groups = Array.prototype.slice.call(document.querySelectorAll('.faq-group'));
+            var links = Array.prototype.slice.call(document.querySelectorAll('.cat-nav a'));
+            var noResults = document.getElementById('no-results');
 
-        // Abrir primer item por defecto
-        document.querySelector('.accordion-item').classList.add('active');
+            function normalize(s) {
+                return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+            }
+
+            input.addEventListener('input', function () {
+                var q = normalize(input.value.trim());
+                var total = 0;
+                groups.forEach(function (group) {
+                    var shown = 0;
+                    group.querySelectorAll('.faq-item').forEach(function (item) {
+                        var match = !q || normalize(item.textContent).indexOf(q) !== -1;
+                        item.hidden = !match;
+                        item.open = !!q && match && shown === 0 && q.length > 2;
+                        if (match) shown++;
+                    });
+                    group.hidden = shown === 0;
+                    total += shown;
+                });
+                noResults.style.display = total ? 'none' : 'block';
+            });
+
+            function setActive(id) {
+                links.forEach(function (a) { a.classList.toggle('active', a.dataset.cat === id); });
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+                }, { rootMargin: '-140px 0px -60% 0px' });
+                groups.forEach(function (g) { observer.observe(g); });
+            }
+            if (links[0]) links[0].classList.add('active');
+        })();
     </script>
 </body>
 </html>

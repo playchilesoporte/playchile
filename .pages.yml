@@ -12,7 +12,7 @@ content:
         list: true
         fields:
           - name: nombre
-            label: Nombre de la categoría (con emoji)
+            label: Nombre de la categoría
             type: string
             required: true
           - name: preguntas
