@@ -34,12 +34,6 @@ content:
     type: file
     path: _data/contacto.yml
     fields:
-      - name: intro_titulo
-        label: Título del banner de arriba
-        type: string
-      - name: intro_texto
-        label: Texto del banner de arriba
-        type: string
       - name: whatsapp_numero
         label: Número de WhatsApp (solo dígitos, con 56, sin +)
         type: string
