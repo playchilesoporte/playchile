@@ -121,7 +121,10 @@ categorias:
       - pregunta: ¿En qué consiste el Bono 100% en todos los depósitos?
         respuesta: Por cada recarga que realices en tu cuenta, PlayChile te otorga un
           saldo de bonificación del 100% del monto depositado. Cada depósito
-          genera un bono independiente dentro de tu perfil.
+          genera un bono independiente dentro de tu perfil. Esto incluye tu
+          primer depósito, que además recibe el bono de bienvenida sin rollover.
+          Los bonos de depósito se pueden tener junto con el bono de bienvenida
+          y con los 30 giros gratis de registro.
       - pregunta: ¿El bono se activa automáticamente al depositar?
         respuesta: 'No, el bono debe ser activado manualmente por el jugador. Para
           activarlo: Ingresa a tu perfil y dirígete a la sección "PROMOCIONES"
@@ -170,12 +173,15 @@ categorias:
           PG Soft: Fortune Mouse, Fortune Ox, Fortune Rabbit, Fortune Tiger,
           Ganesha Gold y Ninja Raccoon Frenzy.'
       - pregunta: ¿Cómo funcionan los 30 giros gratis de registro?
-        respuesta: "Al registrarte recibes 30 giros gratis en juegos del proveedor
+        respuesta: 'Al registrarte recibes 30 giros gratis en juegos del proveedor
           NetEnt. La ganancia máxima que puedes obtener con ellos es de $100.000
-          CLP. Lo ganado debe liberarse apostando con saldo real: el requisito
-          es un Rollover x15, por lo que necesitas haber realizado un depósito
-          para poder retirarlo. Los giros tienen una vigencia de 72 horas (3
-          días)."
+          CLP. Lo ganado se libera apostando con saldo real: el requisito es un
+          Rollover x15, y las apuestas deben hacerse en los mismos juegos
+          habilitados para el rollover de los bonos (consulta la lista con el
+          botón "Juegos Abiertos" en la barra superior). Por eso necesitas haber
+          realizado un depósito para poder retirarlo. Los giros tienen una
+          vigencia de 72 horas (3 días) y se pueden tener junto con tus bonos de
+          depósito.'
   - nombre: Cómo jugar
     preguntas:
       - pregunta: ¿Los juegos son justos?
