@@ -135,9 +135,9 @@ categorias:
           apuestas que realices sumarán exclusivamente al bono que mantengas en
           estado "Activo" en ese momento.
       - pregunta: ¿Cuál es el requisito de apuesta (rollover) para liberar las ganancias?
-        respuesta: El bono cuenta con un requisito de apuesta de Rollover x15 sobre el
+        respuesta: El bono cuenta con un requisito de apuesta de Rollover x20 sobre el
           valor de la bonificación. Por ejemplo, si recibes un bono de 300 CLP,
-          la necesidad de recuperar (apostar) será de 4.500 CLP ($300 X 15). Una
+          la necesidad de recuperar (apostar) será de 6.000 CLP ($300 X 20). Una
           vez completado ese monto en jugadas válidas, el saldo se libera a tu
           cuenta.
       - pregunta: ¿Cuánto tiempo tengo para completar el rollover?
@@ -169,6 +169,13 @@ categorias:
           Bass Bonanza, Diamond Strike, Fruit Party y Wild West Gold.   Slots de
           PG Soft: Fortune Mouse, Fortune Ox, Fortune Rabbit, Fortune Tiger,
           Ganesha Gold y Ninja Raccoon Frenzy.'
+      - pregunta: ¿Cómo funcionan los 30 giros gratis de registro?
+        respuesta: "Al registrarte recibes 30 giros gratis en juegos del proveedor
+          NetEnt. La ganancia máxima que puedes obtener con ellos es de $100.000
+          CLP. Lo ganado debe liberarse apostando con saldo real: el requisito
+          es un Rollover x15, por lo que necesitas haber realizado un depósito
+          para poder retirarlo. Los giros tienen una vigencia de 72 horas (3
+          días)."
   - nombre: Cómo jugar
     preguntas:
       - pregunta: ¿Los juegos son justos?
